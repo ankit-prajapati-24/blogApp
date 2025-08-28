@@ -213,3 +213,37 @@
       // Initial load
       fetchAndRenderBlogs();
     });
+
+
+
+
+
+
+
+// Disable certain key combinations
+document.addEventListener("keydown", function (e) {
+    // F12
+    if (e.key === "F12") {
+        e.preventDefault();
+    }
+
+    // Ctrl+Shift+I / J / C
+    if (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key.toUpperCase())) {
+        e.preventDefault();
+    }
+
+    // Ctrl+U
+    if (e.ctrlKey && e.key.toLowerCase() === "u") {
+        e.preventDefault();
+    }
+
+    // Ctrl+S (Prevent Save Page)
+    if (e.ctrlKey && e.key.toLowerCase() === "s") {
+        e.preventDefault();
+    }
+});
+
+// Disable right click
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+});
