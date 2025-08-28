@@ -135,7 +135,7 @@
 
       function createBlogCard(blog) {
         const date = new Date(blog?.createdAt || Date.now()).toLocaleDateString();
-        const snippet = blog?.content?.substring(0, 150) + '...';
+        const snippet = blog?.content?.substring(0, 500) + '...';
         return `
         <div class="bg-white h-[400px] w-[400px] rounded-xl shadow-md overflow-hidden hover:scale-[1.02] transition">
           <div class="p-6">
