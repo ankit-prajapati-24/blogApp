@@ -1,5 +1,5 @@
     document.addEventListener('DOMContentLoaded', () => {
-      const BASE_URL = 'https://ewl-server.vercel.app/api/v1/blog';
+      const BASE_URL = 'https://ai-agent-steel-ten.vercel.app/api/v1/blog';
 
       // UI Elements
       const blogsPage = document.getElementById('blogs-page');
@@ -140,6 +140,7 @@
         <div class="bg-white h-[400px] w-[400px] rounded-xl shadow-md overflow-hidden hover:scale-[1.02] transition">
           <div class="p-6">
             <h2 class="text-xl font-bold mb-2">${blog?.title || 'Untitled'}</h2>
+            <h5 class="text-xs font-bold mb-2">ID: ${blog?._id || 'Untitled'}</h5>
             <p class="text-sm text-gray-500 mb-4">By ${blog?.author || 'Unknown'} on ${date}</p>
             <p class="text-gray-600 mb-6">${snippet || ''}</p>
             <div class="flex flex-col sm:flex-row sm:space-x-3 space-y-2 sm:space-y-0">
@@ -221,29 +222,29 @@
 
 
 // Disable certain key combinations
-document.addEventListener("keydown", function (e) {
-    // F12
-    if (e.key === "F12") {
-        e.preventDefault();
-    }
+// document.addEventListener("keydown", function (e) {
+//     // F12
+//     if (e.key === "F12") {
+//         e.preventDefault();
+//     }
 
-    // Ctrl+Shift+I / J / C
-    if (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key.toUpperCase())) {
-        e.preventDefault();
-    }
+//     // Ctrl+Shift+I / J / C
+//     if (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key.toUpperCase())) {
+//         e.preventDefault();
+//     }
 
-    // Ctrl+U
-    if (e.ctrlKey && e.key.toLowerCase() === "u") {
-        e.preventDefault();
-    }
+//     // Ctrl+U
+//     if (e.ctrlKey && e.key.toLowerCase() === "u") {
+//         e.preventDefault();
+//     }
 
-    // Ctrl+S (Prevent Save Page)
-    if (e.ctrlKey && e.key.toLowerCase() === "s") {
-        e.preventDefault();
-    }
-});
+//     // Ctrl+S (Prevent Save Page)
+//     if (e.ctrlKey && e.key.toLowerCase() === "s") {
+//         e.preventDefault();
+//     }
+// });
 
-// Disable right click
-document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-});
+// // Disable right click
+// document.addEventListener("contextmenu", function (e) {
+//     e.preventDefault();
+// });
